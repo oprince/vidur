@@ -491,6 +491,13 @@ class LORGlobalSchedulerConfig(BaseGlobalSchedulerConfig):
 
 
 @dataclass
+class LLMDPrefixCacheAwareGlobalSchedulerConfig(BaseGlobalSchedulerConfig):
+    @staticmethod
+    def get_type():
+        return GlobalSchedulerType.LLMD_PREFIX_CACHE_AWARE
+
+
+@dataclass
 class BaseExecutionTimePredictorConfig(BasePolyConfig):
     compute_input_file: str = field(
         default="./data/profiling/compute/{DEVICE}/{MODEL}/mlp.csv",

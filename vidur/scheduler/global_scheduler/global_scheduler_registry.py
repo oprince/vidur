@@ -1,3 +1,6 @@
+from vidur.scheduler.global_scheduler.llmd_prefix_cache_aware_scheduler import (
+    LLMDPrefixCacheAwareScheduler,
+)
 from vidur.scheduler.global_scheduler.lor_global_scheduler import LORGlobalScheduler
 from vidur.scheduler.global_scheduler.random_global_scheduler import (
     RandomGlobalScheduler,
@@ -20,3 +23,6 @@ GlobalSchedulerRegistry.register(
     GlobalSchedulerType.ROUND_ROBIN, RoundRobinGlobalScheduler
 )
 GlobalSchedulerRegistry.register(GlobalSchedulerType.LOR, LORGlobalScheduler)
+GlobalSchedulerRegistry.register(
+    GlobalSchedulerType.LLMD_PREFIX_CACHE_AWARE, LLMDPrefixCacheAwareScheduler
+)
